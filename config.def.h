@@ -32,8 +32,8 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"alacritty", "-d", "130 40","--class", "spterm", NULL };
-const char *spcmd2[] = {"alacritty", "-d", "130 40","--class", "spranger", "-e", "ranger",NULL };
+const char *spcmd1[] = {"alacritty", "--class", "spterm", NULL };
+const char *spcmd2[] = {"alacritty", "--class", "spranger", "-e", "ranger",NULL };
 /* const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL }; */
 static Sp scratchpads[] = {
 	/* name          cmd  */
@@ -91,7 +91,6 @@ static const char *roficmd[]  = { "rofi", "-show", "combi" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,	  		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
